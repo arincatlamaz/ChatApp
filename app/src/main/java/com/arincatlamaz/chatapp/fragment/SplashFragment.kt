@@ -1,4 +1,4 @@
-package com.arincatlamaz.chatapp
+package com.arincatlamaz.chatapp.fragment
 
 import android.os.Bundle
 import android.os.Handler
@@ -8,6 +8,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.navigation.fragment.findNavController
+import com.arincatlamaz.chatapp.R
 import com.arincatlamaz.chatapp.databinding.FragmentSplashBinding
 
 class SplashFragment : Fragment() {

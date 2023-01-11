@@ -1,21 +1,20 @@
-package com.arincatlamaz.chatapp
+package com.arincatlamaz.chatapp.fragment
 
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import com.arincatlamaz.chatapp.databinding.FragmentMessagesBinding
+import com.arincatlamaz.chatapp.databinding.FragmentSettingsBinding
 
-class MessagesFragment : Fragment() {
+class SettingsFragment : Fragment() {
 
-    private lateinit var binding: FragmentMessagesBinding
+    private lateinit var binding: FragmentSettingsBinding
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
-        binding = FragmentMessagesBinding.inflate(inflater, container, false)
+        binding = FragmentSettingsBinding.inflate(inflater, container, false)
 
 
         return binding.root
     }
-
 
 }
