@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "38461092679",
+    "project_id": "chatapp-3dbdb",
+    "storage_bucket": "chatapp-3dbdb.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:38461092679:android:123abe5a72d9d12e849262",
+        "android_client_info": {
+          "package_name": "com.arincatlamaz.chatapp"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "38461092679-prtflicm9mi13dcpcuteljneof4kiqrn.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAQGeQr04V4sBw6qHD7yZdGzEj4zMCSorw"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "38461092679-prtflicm9mi13dcpcuteljneof4kiqrn.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
