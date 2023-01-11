@@ -6,18 +6,18 @@
 
     <fragment
         android:id="@+id/messages"
-        android:name="com.mobil.chatapp.ui.fragment.MessagesFragment"
+        android:name="com.arincatlamaz.chatapp.fragment.MessagesFragment"
         android:label="MessagesFragment" />
     <fragment
         android:id="@+id/calls"
-        android:name="com.mobil.chatapp.ui.fragment.CallsFragment"
+        android:name="com.arincatlamaz.chatapp.fragment.CallsFragment"
         android:label="CallsFragment" />
     <fragment
         android:id="@+id/contacts"
-        android:name="com.mobil.chatapp.ui.fragment.ContactsFragment"
+        android:name="com.arincatlamaz.chatapp.fragment.ContactsFragment"
         android:label="ContactsFragment" />
     <fragment
         android:id="@+id/settings"
-        android:name="com.mobil.chatapp.ui.fragment.SettingsFragment"
+        android:name="com.arincatlamaz.chatapp.fragment.SettingsFragment"
         android:label="SettingsFragment" />
 </navigation>
