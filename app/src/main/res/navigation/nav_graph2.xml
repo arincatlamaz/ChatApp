@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/nav_graph2"
+    app:startDestination="@id/messages">
+
+    <fragment
+        android:id="@+id/messages"
+        android:name="com.mobil.chatapp.ui.fragment.MessagesFragment"
+        android:label="MessagesFragment" />
+    <fragment
+        android:id="@+id/calls"
+        android:name="com.mobil.chatapp.ui.fragment.CallsFragment"
+        android:label="CallsFragment" />
+    <fragment
+        android:id="@+id/contacts"
+        android:name="com.mobil.chatapp.ui.fragment.ContactsFragment"
+        android:label="ContactsFragment" />
+    <fragment
+        android:id="@+id/settings"
+        android:name="com.mobil.chatapp.ui.fragment.SettingsFragment"
+        android:label="SettingsFragment" />
+</navigation>
