@@ -23,6 +23,7 @@ class SplashFragment : Fragment() {
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
         binding = FragmentSplashBinding.inflate(inflater, container, false)
 
+
         val delay = 2000L
         Handler(Looper.getMainLooper()).postDelayed({
             findNavController().navigate(R.id.splashToOnBoarding)

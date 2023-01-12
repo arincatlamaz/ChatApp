@@ -1,8 +1,10 @@
 package com.arincatlamaz.chatapp
 
-import androidx.appcompat.app.AppCompatActivity
+import android.R
 import android.os.Bundle
+import androidx.appcompat.app.AppCompatActivity
 import com.arincatlamaz.chatapp.databinding.ActivityMainBinding
+
 
 class MainActivity : AppCompatActivity() {
     private lateinit var binding:ActivityMainBinding
@@ -11,8 +13,10 @@ class MainActivity : AppCompatActivity() {
         binding = ActivityMainBinding.inflate(layoutInflater)
         val view = binding.root
         setContentView(view)
+
+
     }
 
 
-
 }
+

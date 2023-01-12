@@ -11,27 +11,20 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent">
 
-        <include
-            android:id="@+id/included"
-            layout="@layout/toolbar" />
-
         <androidx.appcompat.widget.AppCompatButton
             android:id="@+id/btnBack"
             android:layout_width="35dp"
             android:layout_height="35dp"
             android:layout_marginStart="20dp"
-            android:layout_marginTop="17dp"
             android:background="@drawable/back_btn"
-            app:layout_constraintBottom_toBottomOf="@+id/included"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="@+id/included"
+            app:layout_constraintTop_toTopOf="parent"
             tools:ignore="MissingConstraints" />
 
         <TextView
             android:id="@+id/textView4"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="100dp"
             android:fontFamily="@font/dosis_extra_bold"
             android:letterSpacing="0.1"
             android:text="@string/log_in_to_chatapp"
@@ -39,7 +32,7 @@
             android:textSize="25sp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/included" />
+            app:layout_constraintTop_toTopOf="parent" />
 
         <TextView
             android:id="@+id/textView5"
