@@ -1,6 +1,5 @@
 package com.arincatlamaz.chatapp.fragment
 
-import android.content.Intent
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
@@ -20,22 +19,18 @@ class SignUpFragment : Fragment() {
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
         binding = FragmentSignUpBinding.inflate(inflater, container, false)
 
-        auth = Firebase.auth
-
-
-
+        auth = Firebase.auth// Initialize Firebase Auth
         binding.btnBack.setOnClickListener(){
             findNavController().popBackStack(R.id.onBoardingFragment, false)
         }
-
         binding.signUpBtn.setOnClickListener {
             val email = binding.email.text.toString()
             val password = binding.password.text.toString()
 
-
             if (email.isNotEmpty() && password.isNotEmpty()){
                 auth.createUserWithEmailAndPassword(email,password).addOnSuccessListener {
                     findNavController().navigate(R.id.signUpToLogin)
+                    activity?.finish()
                 }.addOnFailureListener {
                     Toast.makeText(context,it.localizedMessage, Toast.LENGTH_LONG).show()
                 }
@@ -43,13 +38,7 @@ class SignUpFragment : Fragment() {
             else{
                 Toast.makeText(context,"Please Enter Email and Password!", Toast.LENGTH_LONG).show()
             }
-
-
         }
-
         return binding.root
     }
-
-
-
 }

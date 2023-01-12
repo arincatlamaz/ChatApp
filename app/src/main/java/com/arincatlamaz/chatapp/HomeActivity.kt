@@ -7,9 +7,11 @@ import androidx.navigation.Navigation
 import androidx.navigation.ui.NavigationUI
 import com.arincatlamaz.chatapp.databinding.ActivityHomeBinding
 import com.google.android.material.bottomnavigation.BottomNavigationView
+import com.google.firebase.auth.FirebaseAuth
 
 class HomeActivity : AppCompatActivity() {
     private lateinit var binding: ActivityHomeBinding
+    private lateinit var auth: FirebaseAuth
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ActivityHomeBinding.inflate(layoutInflater)
@@ -20,7 +22,6 @@ class HomeActivity : AppCompatActivity() {
         val navController : NavController = Navigation.findNavController(this,R.id.fragmentContainerView2)
         val bottomNavigationView : BottomNavigationView = findViewById(R.id.bottomNavigationView)
         NavigationUI.setupWithNavController(bottomNavigationView,navController)
-
 
 
     }

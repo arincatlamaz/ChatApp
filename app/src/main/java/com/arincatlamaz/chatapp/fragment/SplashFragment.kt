@@ -1,5 +1,6 @@
 package com.arincatlamaz.chatapp.fragment
 
+import android.content.Intent
 import android.os.Bundle
 import android.os.Handler
 import android.os.Looper
@@ -8,11 +9,16 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.navigation.fragment.findNavController
+import com.arincatlamaz.chatapp.HomeActivity
 import com.arincatlamaz.chatapp.R
 import com.arincatlamaz.chatapp.databinding.FragmentSplashBinding
+import com.google.firebase.auth.FirebaseAuth
+import com.google.firebase.auth.ktx.auth
+import com.google.firebase.ktx.Firebase
 
 class SplashFragment : Fragment() {
 
+    private lateinit var auth: FirebaseAuth
     private lateinit var binding: FragmentSplashBinding
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
         binding = FragmentSplashBinding.inflate(inflater, container, false)
@@ -21,6 +27,12 @@ class SplashFragment : Fragment() {
         Handler(Looper.getMainLooper()).postDelayed({
             findNavController().navigate(R.id.splashToOnBoarding)
         }, delay)
+
+        auth = Firebase.auth
+        val currentUser = auth.currentUser
+        if (currentUser != null){
+            startActivity(Intent(context, HomeActivity::class.java))
+        }
 
         return binding.root
     }
