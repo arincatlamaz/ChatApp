@@ -23,17 +23,33 @@ class SplashFragment : Fragment() {
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
         binding = FragmentSplashBinding.inflate(inflater, container, false)
 
+        var extras : Bundle? = activity?.intent?.extras
 
-        val delay = 2000L
-        Handler(Looper.getMainLooper()).postDelayed({
-            findNavController().navigate(R.id.splashToOnBoarding)
-        }, delay)
+        if (extras != null && extras.containsKey("logout")){
+            val logout : Boolean = extras.getBoolean("logout")
+            if (logout){
+                findNavController().navigate(R.id.splashToLogin)
 
-        auth = Firebase.auth
-        val currentUser = auth.currentUser
-        if (currentUser != null){
-            startActivity(Intent(context, HomeActivity::class.java))
+            }
         }
+        else{
+            val delay = 2000L
+            Handler(Looper.getMainLooper()).postDelayed({
+                findNavController().navigate(R.id.splashToOnBoarding)
+            }, delay)
+
+            auth = Firebase.auth
+            val currentUser = auth.currentUser
+            if (currentUser != null){
+                startActivity(Intent(context, HomeActivity::class.java))
+            }
+        }
+
+
+
+
+
+
 
         return binding.root
     }
