@@ -1,11 +1,14 @@
 package com.arincatlamaz.chatapp.fragment
 
+import android.app.ActionBar
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
+import android.view.MenuItem
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
+import androidx.activity.addCallback
 import androidx.navigation.fragment.findNavController
 import com.arincatlamaz.chatapp.R
 import com.arincatlamaz.chatapp.databinding.FragmentSignUpBinding
@@ -18,7 +21,7 @@ class SignUpFragment : Fragment() {
     private lateinit var binding: FragmentSignUpBinding
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
         binding = FragmentSignUpBinding.inflate(inflater, container, false)
-
+        
         auth = Firebase.auth// Initialize Firebase Auth
         binding.btnBack.setOnClickListener(){
             findNavController().popBackStack(R.id.onBoardingFragment, false)
@@ -39,6 +42,15 @@ class SignUpFragment : Fragment() {
                 Toast.makeText(context,"Please Enter Email and Password!", Toast.LENGTH_LONG).show()
             }
         }
+
+
+
         return binding.root
     }
+
+    override fun onContextItemSelected(item: MenuItem): Boolean {
+        return super.onContextItemSelected(item)
+    }
+
+
 }

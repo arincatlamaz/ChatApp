@@ -44,8 +44,10 @@ class HomeActivity : AppCompatActivity() {
 
         if (id == R.id.logout) {
             auth.signOut()
-            supportFragmentManager.beginTransaction()
-                .add(android.R.id.content, LoginFragment()).commit()
+
+            val intent = Intent(this@HomeActivity,MainActivity::class.java)
+            startActivity(intent)
+
         }
         return super.onOptionsItemSelected(item)
 
