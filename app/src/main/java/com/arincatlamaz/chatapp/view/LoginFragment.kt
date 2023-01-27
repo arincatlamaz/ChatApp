@@ -1,38 +1,36 @@
-package com.arincatlamaz.chatapp.fragment
+package com.arincatlamaz.chatapp.view
 
-import android.app.ActionBar
+import android.content.Intent
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
-import android.view.MenuItem
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
-import androidx.activity.addCallback
 import androidx.navigation.fragment.findNavController
 import com.arincatlamaz.chatapp.R
-import com.arincatlamaz.chatapp.databinding.FragmentSignUpBinding
+import com.arincatlamaz.chatapp.databinding.FragmentLoginBinding
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.ktx.auth
 import com.google.firebase.ktx.Firebase
 
-class SignUpFragment : Fragment() {
+class LoginFragment : Fragment() {
+
     private lateinit var auth: FirebaseAuth
-    private lateinit var binding: FragmentSignUpBinding
+    private lateinit var binding: FragmentLoginBinding
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
-        binding = FragmentSignUpBinding.inflate(inflater, container, false)
-        
-        auth = Firebase.auth// Initialize Firebase Auth
-        binding.btnBack.setOnClickListener(){
-            findNavController().popBackStack(R.id.onBoardingFragment, false)
-        }
-        binding.signUpBtn.setOnClickListener {
+
+
+        auth = Firebase.auth
+        binding = FragmentLoginBinding.inflate(inflater, container, false)
+
+        binding.loginBtn.setOnClickListener{
             val email = binding.email.text.toString()
             val password = binding.password.text.toString()
 
             if (email.isNotEmpty() && password.isNotEmpty()){
-                auth.createUserWithEmailAndPassword(email,password).addOnSuccessListener {
-                    findNavController().navigate(R.id.signUpToLogin)
+                auth.signInWithEmailAndPassword(email,password).addOnSuccessListener {
+                    startActivity(Intent(context, HomeActivity::class.java))
                     activity?.finish()
                 }.addOnFailureListener {
                     Toast.makeText(context,it.localizedMessage, Toast.LENGTH_LONG).show()
@@ -41,16 +39,20 @@ class SignUpFragment : Fragment() {
             else{
                 Toast.makeText(context,"Please Enter Email and Password!", Toast.LENGTH_LONG).show()
             }
+
+
         }
 
+
+
+        binding.btnBack.setOnClickListener(){
+            findNavController().popBackStack(R.id.onBoardingFragment, false)
+        }
 
 
         return binding.root
     }
 
-    override fun onContextItemSelected(item: MenuItem): Boolean {
-        return super.onContextItemSelected(item)
-    }
 
 
 }

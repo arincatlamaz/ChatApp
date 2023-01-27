@@ -7,7 +7,7 @@
 
     <fragment
         android:id="@+id/splashFragment"
-        android:name="com.arincatlamaz.chatapp.fragment.SplashFragment"
+        android:name="com.arincatlamaz.chatapp.view.SplashFragment"
         android:label="fragment_splash"
         tools:layout="@layout/fragment_splash" >
         <action
@@ -19,12 +19,12 @@
     </fragment>
     <fragment
         android:id="@+id/loginFragment"
-        android:name="com.arincatlamaz.chatapp.fragment.LoginFragment"
+        android:name="com.arincatlamaz.chatapp.view.LoginFragment"
         android:label="fragment_login"
         tools:layout="@layout/fragment_login" />
     <fragment
         android:id="@+id/signUpFragment"
-        android:name="com.arincatlamaz.chatapp.fragment.SignUpFragment"
+        android:name="com.arincatlamaz.chatapp.view.SignUpFragment"
         android:label="fragment_sign_up"
         tools:layout="@layout/fragment_sign_up" >
         <action
@@ -33,7 +33,7 @@
     </fragment>
     <fragment
         android:id="@+id/onBoardingFragment"
-        android:name="com.arincatlamaz.chatapp.fragment.OnBoardingFragment"
+        android:name="com.arincatlamaz.chatapp.view.OnBoardingFragment"
         android:label="fragment_on_boarding"
         tools:layout="@layout/fragment_on_boarding" >
         <action

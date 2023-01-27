@@ -1,17 +1,19 @@
-package com.arincatlamaz.chatapp
+package com.arincatlamaz.chatapp.view
 
+import android.content.DialogInterface
 import android.content.Intent
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.Menu
 import android.view.MenuItem
 import android.widget.Toast
+import androidx.appcompat.app.AlertDialog
+import androidx.appcompat.app.AppCompatActivity
 import androidx.navigation.NavController
 import androidx.navigation.Navigation
+import androidx.navigation.findNavController
 import androidx.navigation.ui.NavigationUI
+import com.arincatlamaz.chatapp.R
 import com.arincatlamaz.chatapp.databinding.ActivityHomeBinding
-import com.arincatlamaz.chatapp.fragment.LoginFragment
-import com.arincatlamaz.chatapp.fragment.OnBoardingFragment
 import com.google.android.material.bottomnavigation.BottomNavigationView
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.ktx.auth
@@ -27,7 +29,9 @@ class HomeActivity : AppCompatActivity() {
         setContentView(view)
         auth = Firebase.auth
 
-        val navController : NavController = Navigation.findNavController(this,R.id.fragmentContainerView2)
+        val navController : NavController = Navigation.findNavController(this,
+            R.id.fragmentContainerView2
+        )
         val bottomNavigationView : BottomNavigationView = findViewById(R.id.bottomNavigationView)
         NavigationUI.setupWithNavController(bottomNavigationView,navController)
 
@@ -45,7 +49,7 @@ class HomeActivity : AppCompatActivity() {
         if (id == R.id.logout) {
             auth.signOut()
 
-            val intent = Intent(this@HomeActivity,MainActivity::class.java)
+            val intent = Intent(this@HomeActivity, MainActivity::class.java)
             intent.putExtra("logout",true)
             overridePendingTransition(0,0)
             intent.addFlags(Intent.FLAG_ACTIVITY_NO_ANIMATION)
@@ -55,6 +59,28 @@ class HomeActivity : AppCompatActivity() {
         }
         return super.onOptionsItemSelected(item)
 
+    }
+
+    override fun onBackPressed() {
+
+        val builder = AlertDialog.Builder(this)
+        builder.setTitle("Are you sure?")
+        builder.setMessage("Hello")
+        builder.setPositiveButton("Yes",DialogInterface.OnClickListener { dialog, which ->
+
+        })
+
+        auth.signOut()
+        val intent = Intent(this@HomeActivity, MainActivity::class.java)
+        intent.putExtra("backpress",true)
+        overridePendingTransition(0,0)
+        intent.addFlags(Intent.FLAG_ACTIVITY_NO_ANIMATION)
+        finish()
+        startActivity(intent)
+
+
+
+        super.onBackPressed()
     }
 
 

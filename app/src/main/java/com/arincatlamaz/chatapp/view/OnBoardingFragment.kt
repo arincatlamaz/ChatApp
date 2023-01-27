@@ -1,4 +1,4 @@
-package com.arincatlamaz.chatapp.fragment
+package com.arincatlamaz.chatapp.view
 
 import android.os.Bundle
 import androidx.fragment.app.Fragment

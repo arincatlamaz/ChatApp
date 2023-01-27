@@ -1,4 +1,4 @@
-package com.arincatlamaz.chatapp.fragment
+package com.arincatlamaz.chatapp.view
 
 import android.content.Intent
 import android.os.Bundle
@@ -9,7 +9,6 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.navigation.fragment.findNavController
-import com.arincatlamaz.chatapp.HomeActivity
 import com.arincatlamaz.chatapp.R
 import com.arincatlamaz.chatapp.databinding.FragmentSplashBinding
 import com.google.firebase.auth.FirebaseAuth
@@ -24,6 +23,16 @@ class SplashFragment : Fragment() {
         binding = FragmentSplashBinding.inflate(inflater, container, false)
 
         var extras : Bundle? = activity?.intent?.extras
+        var extras2 : Bundle? = activity?.intent?.extras
+
+
+        /*if (extras2 != null && extras2.containsKey("backpress")){
+            val backpress : Boolean = extras2.getBoolean("backpress")
+            if (backpress){
+                findNavController().navigate(R.id.splashToLogin)
+
+            }
+        }*/
 
         if (extras != null && extras.containsKey("logout")){
             val logout : Boolean = extras.getBoolean("logout")
@@ -31,7 +40,14 @@ class SplashFragment : Fragment() {
                 findNavController().navigate(R.id.splashToLogin)
 
             }
+        } else if (extras2 != null && extras2.containsKey("backpress")){
+            val backpress : Boolean = extras2.getBoolean("backpress")
+            if (backpress){
+                findNavController().navigate(R.id.splashToLogin)
+
+            }
         }
+
         else{
             val delay = 2000L
             Handler(Looper.getMainLooper()).postDelayed({
@@ -44,10 +60,6 @@ class SplashFragment : Fragment() {
                 startActivity(Intent(context, HomeActivity::class.java))
             }
         }
-
-
-
-
 
 
 

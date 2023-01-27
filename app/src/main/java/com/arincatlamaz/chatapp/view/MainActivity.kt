@@ -1,4 +1,4 @@
-package com.arincatlamaz.chatapp
+package com.arincatlamaz.chatapp.view
 
 import android.R
 import android.os.Bundle

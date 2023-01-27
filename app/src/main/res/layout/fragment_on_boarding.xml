@@ -5,7 +5,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".fragment.OnBoardingFragment">
+    tools:context=".view.OnBoardingFragment">
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
@@ -17,7 +17,7 @@
             android:layout_width="50dp"
             android:layout_height="50dp"
             android:layout_marginStart="140dp"
-            android:layout_marginTop="96dp"
+            android:layout_marginTop="46dp"
             android:background="@drawable/chatapplogo"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
@@ -41,7 +41,7 @@
             android:id="@+id/textView"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="60dp"
+            android:layout_marginTop="20dp"
             android:fontFamily="@font/dosis_extra_bold"
             android:gravity="center"
             android:text="@string/onboarding_text"
@@ -53,7 +53,7 @@
             android:id="@+id/signUpBtn"
             android:layout_width="wrap_content"
             android:layout_height="64dp"
-            android:layout_marginTop="60dp"
+            android:layout_marginTop="40dp"
             android:backgroundTint="#24786D"
             android:letterSpacing="0.1"
             android:text="@string/sign_up_with_e_mail"
