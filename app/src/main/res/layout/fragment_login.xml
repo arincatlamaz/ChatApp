@@ -11,17 +11,6 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent">
 
-        <androidx.appcompat.widget.AppCompatButton
-            android:id="@+id/btnBack"
-            android:layout_width="35dp"
-            android:layout_height="35dp"
-            android:layout_marginStart="16dp"
-            android:layout_marginTop="16dp"
-            android:background="@drawable/back_btn"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            tools:ignore="MissingConstraints" />
-
         <TextView
             android:id="@+id/textView4"
             android:layout_width="wrap_content"
@@ -121,7 +110,35 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/password" />
 
+        <TextView
+            android:id="@+id/textView21"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="5dp"
+            android:fontFamily="@font/dosis_medium"
+            android:text="Or "
+            android:textColor="#333333"
+            android:textSize="16sp"
+            app:layout_constraintBottom_toBottomOf="@+id/signUpBtn"
+            app:layout_constraintEnd_toStartOf="@+id/signUpBtn"
+            app:layout_constraintTop_toTopOf="@+id/signUpBtn" />
 
+        <TextView
+            android:id="@+id/signUpBtn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="10dp"
+            android:layout_marginTop="20dp"
+            android:clickable="true"
+            android:focusable="true"
+            android:fontFamily="@font/dosis_extra_bold"
+            android:text="@string/sign_up"
+            android:textColor="#24786D"
+            android:textSize="16sp"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="@+id/loginBtn"
+            app:layout_constraintStart_toStartOf="@+id/loginBtn"
+            app:layout_constraintTop_toBottomOf="@+id/loginBtn" />
     </androidx.constraintlayout.widget.ConstraintLayout>
 
 </FrameLayout>

@@ -45,8 +45,8 @@ class LoginFragment : Fragment() {
 
 
 
-        binding.btnBack.setOnClickListener(){
-            findNavController().popBackStack(R.id.onBoardingFragment, false)
+        binding.signUpBtn.setOnClickListener(){
+            findNavController().navigate(R.id.signUpFragment)
         }
 
 

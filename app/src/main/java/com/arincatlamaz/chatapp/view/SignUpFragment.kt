@@ -21,9 +21,10 @@ class SignUpFragment : Fragment() {
         binding = FragmentSignUpBinding.inflate(inflater, container, false)
         
         auth = Firebase.auth// Initialize Firebase Auth
-        binding.btnBack.setOnClickListener(){
-            findNavController().popBackStack(R.id.onBoardingFragment, false)
+        binding.loginBtn.setOnClickListener(){
+            findNavController().navigate(R.id.loginFragment)
         }
+
         binding.signUpBtn.setOnClickListener {
             val email = binding.email.text.toString()
             val password = binding.password.text.toString()

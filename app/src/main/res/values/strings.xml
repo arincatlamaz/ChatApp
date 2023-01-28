@@ -6,7 +6,7 @@
     <string name="chat_app">Chat App</string>
     <string name="log_in"><u>Log in</u></string>
     <string name="existing_account">Existing account?</string>
-    <string name="sign_up_with_email"><u>Sign Up with Email</u></string>
+    <string name="sign_up"><u>Sign Up with Email</u></string>
     <string name="sign_text">Get chatting with friends and family today by\n signing up for our ChatApp!</string>
     <string name="create_an_account">Create An Account</string>
     <string name="password">Password</string>
