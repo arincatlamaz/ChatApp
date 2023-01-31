@@ -17,6 +17,7 @@ import com.google.firebase.ktx.Firebase
 class SignUpFragment : Fragment() {
     private lateinit var auth: FirebaseAuth
     private lateinit var binding: FragmentSignUpBinding
+
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
         binding = FragmentSignUpBinding.inflate(inflater, container, false)
         
@@ -32,7 +33,6 @@ class SignUpFragment : Fragment() {
             if (email.isNotEmpty() && password.isNotEmpty()){
                 auth.createUserWithEmailAndPassword(email,password).addOnSuccessListener {
                     findNavController().navigate(R.id.signUpToLogin)
-                    activity?.finish()
                 }.addOnFailureListener {
                     Toast.makeText(context,it.localizedMessage, Toast.LENGTH_LONG).show()
                 }

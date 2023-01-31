@@ -23,16 +23,6 @@ class SplashFragment : Fragment() {
         binding = FragmentSplashBinding.inflate(inflater, container, false)
 
         var extras : Bundle? = activity?.intent?.extras
-        var extras2 : Bundle? = activity?.intent?.extras
-
-
-        /*if (extras2 != null && extras2.containsKey("backpress")){
-            val backpress : Boolean = extras2.getBoolean("backpress")
-            if (backpress){
-                findNavController().navigate(R.id.splashToLogin)
-
-            }
-        }*/
 
         if (extras != null && extras.containsKey("logout")){
             val logout : Boolean = extras.getBoolean("logout")
@@ -40,15 +30,7 @@ class SplashFragment : Fragment() {
                 findNavController().navigate(R.id.splashToLogin)
 
             }
-        } else if (extras2 != null && extras2.containsKey("backpress")){
-            val backpress : Boolean = extras2.getBoolean("backpress")
-            if (backpress){
-                findNavController().navigate(R.id.splashToLogin)
-
-            }
-        }
-
-        else{
+        } else{
             val delay = 2000L
             Handler(Looper.getMainLooper()).postDelayed({
                 findNavController().navigate(R.id.splashToOnBoarding)
