@@ -10,17 +10,19 @@ import android.widget.Toast
 import androidx.navigation.fragment.findNavController
 import com.arincatlamaz.chatapp.R
 import com.arincatlamaz.chatapp.databinding.FragmentSignUpBinding
+import com.arincatlamaz.chatapp.service.EventClickListener
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.ktx.auth
 import com.google.firebase.ktx.Firebase
 
-class SignUpFragment : Fragment() {
+class SignUpFragment : Fragment(){
     private lateinit var auth: FirebaseAuth
     private lateinit var binding: FragmentSignUpBinding
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
         binding = FragmentSignUpBinding.inflate(inflater, container, false)
-        
+
+
         auth = Firebase.auth// Initialize Firebase Auth
         binding.loginBtn.setOnClickListener(){
             findNavController().navigate(R.id.loginFragment)
